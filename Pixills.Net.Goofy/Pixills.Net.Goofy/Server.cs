@@ -1,4 +1,5 @@
-﻿using Pixills.Net.Goofy.Modules;
+﻿using System.Threading.Tasks;
+using Pixills.Net.Goofy.Modules;
 using Pixills.Tools.Log;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace Pixills.Net.Goofy
         private readonly List<Socket> _connections = new List<Socket>();
         private IModule _module;
 
-        public void Start(ushort port, ushort backlog)
+        public async Task Start(ushort port, ushort backlog)
         {
             Log(LogLevel.Info, "Starting server");
             _listener = new TcpListener(new IPEndPoint(IPAddress.Any, port));
@@ -35,12 +36,9 @@ namespace Pixills.Net.Goofy
             Log(LogLevel.Info, "Start listening on port " + port + ". Backlog is " + backlog + ".");
             while (_isListening)
             {
-                var s = _listener.AcceptSocket();
-                Log(LogLevel.Info, "Client " + s.RemoteEndPoint + " connected.");
-                var t1 = new Thread(HandleConnection);
-                t1.SetApartmentState(ApartmentState.STA);
-                t1.IsBackground = false;
-                t1.Start(s);
+                var socket = _listener.AcceptSocket();
+                Log(LogLevel.Info, "Client " + socket.RemoteEndPoint + " connected.");
+                await HandleConnection(socket);
             }
         }
 
@@ -50,7 +48,7 @@ namespace Pixills.Net.Goofy
             _listener.Stop();
         }
 
-        void HandleConnection(object o)
+        async Task HandleConnection(object o)
         {
             var connectionIsAlive = true;
             var s = o as Socket;
