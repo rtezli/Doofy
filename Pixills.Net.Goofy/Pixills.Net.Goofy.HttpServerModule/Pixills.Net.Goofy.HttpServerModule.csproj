@@ -35,9 +35,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Libraries\Pixills.Net.Goofy.Modules.dll</HintPath>
     </Reference>
-    <Reference Include="Pixills.Net.Http">
-      <HintPath>..\..\Pixills.Net\Pixills.Net.Http\bin\Debug\Pixills.Net.Http.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,6 +45,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Pixills.Net.Http\Pixills.Net.Http.csproj">
+      <Project>{7378b1a6-8ad5-42a9-9fc6-5b7407c21879}</Project>
+      <Name>Pixills.Net.Http</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

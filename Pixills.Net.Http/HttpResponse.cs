@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
-using System.Runtime.Serialization;
-using System.Text.RegularExpressions;
-using Pixills.Tools.Log;
-using System.IO;
+using LogLevel = Pixills.Tools.Log.LogLevel;
 
 namespace Pixills.Net.Http
 {
@@ -59,7 +56,7 @@ namespace Pixills.Net.Http
                         Headers[key] = value;
 
                     if (!Headers.ContainsKey(key))
-                        HttpHandler.Log(LogLevel.Warning, "Key \"" + key + "\" is missing in header list");
+                        HttpHandler.Log(Tools.Log.LogLevel.Warning, "Key \"" + key + "\" is missing in header list");
                 }
 
                 if (!string.IsNullOrEmpty(Headers["Content-Type"]))

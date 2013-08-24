@@ -1,9 +1,9 @@
 ﻿using Pixills.Net.Goofy.Modules;
 using Pixills.Net.Http;
-using Pixills.Tools.Log;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using Pixills.Tools.Log;
 
 namespace Pixills.Net.Goofy.HttpProxyModule
 {

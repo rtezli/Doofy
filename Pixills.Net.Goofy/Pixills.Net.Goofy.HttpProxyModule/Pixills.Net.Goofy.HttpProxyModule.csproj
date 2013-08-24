@@ -33,11 +33,11 @@
   <ItemGroup>
     <Reference Include="Pixills.Net.Goofy.Modules, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Libraries\Pixills.Net.Goofy.Modules.dll</HintPath>
+      <HintPath>..\Pixills.Net.Goofy.Modules\obj\Debug\Pixills.Net.Goofy.Modules.dll</HintPath>
     </Reference>
     <Reference Include="Pixills.Tools.Log, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Libraries\Pixills.Tools.Log.dll</HintPath>
+      <HintPath>..\Pixills.Net.Goofy.CommandLine\bin\Debug\Pixills.Tools.Log.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
