@@ -1,4 +1,5 @@
-﻿using Pixills.Tools.Log;
+﻿using System.Threading.Tasks;
+using Pixills.Tools.Log;
 using System;
 using System.IO;
 
@@ -10,6 +11,6 @@ namespace Pixills.Net.Goofy.Modules
 
         string ModuleName { get; }
 
-        byte[] ProcessRequest(MemoryStream buffer);
+        Task<byte[]> ProcessRequest(MemoryStream buffer);
     }
 }

@@ -1,4 +1,5 @@
-﻿using Pixills.Net.Goofy.Modules;
+﻿using System.Threading.Tasks;
+using Pixills.Net.Goofy.Modules;
 using Pixills.Net.Http;
 using System;
 using System.Collections.Generic;
@@ -25,23 +26,23 @@ namespace Pixills.Net.Goofy.HttpProxyModule
             _moduleName = "HttpProxy";
         }
 
-        public byte[] ProcessRequest(MemoryStream ms)
+        public Task<byte[]> ProcessRequest(MemoryStream ms)
         {
-            byte[] responseData = new byte[0];
+            var responseData = new byte[0];
 
             var h = new HttpHandler(Log);
 
             var request = new HttpRequest();
             if (!request.TryParseProxyRequest(ms))
-                return responseData;
+                return new Task<byte[]>(() => responseData);
 
             RequestFilterActions.ForEach(f => f.Invoke());
-            
+
             var response = request.GetResponse();
 
             RequestFilterActions.ForEach(f => f.Invoke());
 
-            return response.ResponseStream.GetBuffer();
+            return new Task<byte[]>(() => response.ResponseStream.GetBuffer());
         }
 
         public void Log(LogEventArgs e)

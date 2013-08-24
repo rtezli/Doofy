@@ -1,12 +1,11 @@
-﻿using System.Threading.Tasks;
-using Pixills.Net.Goofy.Modules;
+﻿using Pixills.Net.Goofy.Modules;
 using Pixills.Tools.Log;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
-using System.Threading;
+using System.Threading.Tasks;
 
 namespace Pixills.Net.Goofy
 {
@@ -77,7 +76,7 @@ namespace Pixills.Net.Goofy
 
                         if (ms.Length > 0)
                         {
-                            var result = _module.ProcessRequest(ms);
+                            var result = await _module.ProcessRequest(ms);
                             if (!SendingResponseSuccees(s, result))
                             {
                                 Log(LogLevel.Error, "Could not send response to client. Closing Connection");
