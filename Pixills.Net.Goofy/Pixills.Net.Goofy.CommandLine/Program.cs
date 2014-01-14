@@ -1,4 +1,5 @@
 ﻿using Pixills.Tools.Log;
+using Pixills.Net.Goofy.Modules;
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -30,6 +31,7 @@ namespace Pixills.Net.Goofy.CommandLine
                 LogToConsole(new LogEventArgs(LogLevel.Error, "Could not start server. Reason : " + e.Message));
             }
         }
+
         private static void LogToConsole(LogEventArgs e)
         {
             ConsoleColor c = Console.ForegroundColor;

@@ -34,14 +34,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Pixills.Net.Goofy.Modules, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Pixills.Net.Goofy.Modules\obj\Debug\Pixills.Net.Goofy.Modules.dll</HintPath>
-    </Reference>
-    <Reference Include="Pixills.Tools.Log, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Pixills.Net.Goofy.CommandLine\bin\Debug\Pixills.Tools.Log.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -60,6 +52,14 @@
     <ProjectReference Include="..\..\Pixills.Net.Http\Pixills.Net.Http.csproj">
       <Project>{7378B1A6-8AD5-42A9-9FC6-5B7407C21879}</Project>
       <Name>Pixills.Net.Http</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Pixills.Net.Tools\Pixills.Net.Tools.csproj">
+      <Project>{f20d494a-80d0-42a9-b7f8-cf00fbb270ad}</Project>
+      <Name>Pixills.Net.Tools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pixills.Net.Goofy.Modules\Pixills.Net.Goofy.Modules.csproj">
+      <Project>{55e63d09-ebe8-49b6-a13f-2c6274c49f47}</Project>
+      <Name>Pixills.Net.Goofy.Modules</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

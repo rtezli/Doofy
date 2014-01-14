@@ -2,6 +2,8 @@
 using System.IO;
 using System.Linq;
 using System.Text;
+using Pixills.Tools.Log;
+using Pixills.Net.Tools.Extensions;
 using LogLevel = Pixills.Tools.Log.LogLevel;
 
 namespace Pixills.Net.Http
@@ -56,7 +58,7 @@ namespace Pixills.Net.Http
                         Headers[key] = value;
 
                     if (!Headers.ContainsKey(key))
-                        HttpHandler.Log(Tools.Log.LogLevel.Warning, "Key \"" + key + "\" is missing in header list");
+                        HttpHandler.Log(Pixills.Tools.Log.LogLevel.Warning, "Key \"" + key + "\" is missing in header list");
                 }
 
                 if (!string.IsNullOrEmpty(Headers["Content-Type"]))
@@ -118,8 +120,8 @@ namespace Pixills.Net.Http
             {
                 fs.Write(Content, 0, Content.Length);
             }
-           
-            HttpHandler.Log(LogLevel.Info, Pixills.Tools.Log.Helpers.HexDump(Content));
+
+            HttpHandler.Log(LogLevel.Info, Content.AsHexString());
             //HttpHandler.Log(LogLevel.Info, WriteBytesAsHex(RawContent));
 #endif
             return response;

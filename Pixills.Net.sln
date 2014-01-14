@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pixills.Net.Goofy", "Pixills.Net.Goofy\Pixills.Net.Goofy\Pixills.Net.Goofy.csproj", "{7C42AEAB-BB49-4D99-B7B9-5BE8A1A7387C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pixills.Net.Http", "Pixills.Net.Http\Pixills.Net.Http.csproj", "{7378B1A6-8AD5-42A9-9FC6-5B7407C21879}"
@@ -30,6 +32,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpProxyModule.Tests", "HttpProxyModule.Tests\HttpProxyModule.Tests.csproj", "{B9468322-5226-4475-96DE-BD12EA4C6DB6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Http.Tests", "Http.Tests\Http.Tests.csproj", "{1F2E1A79-2989-4275-9C9C-6AD2C43A3075}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pixills.Net.Tools", "Pixills.Net.Tools\Pixills.Net.Tools.csproj", "{F20D494A-80D0-42A9-B7F8-CF00FBB270AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -161,6 +165,16 @@ Global
 		{1F2E1A79-2989-4275-9C9C-6AD2C43A3075}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{1F2E1A79-2989-4275-9C9C-6AD2C43A3075}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{1F2E1A79-2989-4275-9C9C-6AD2C43A3075}.Release|x86.ActiveCfg = Release|Any CPU
+		{F20D494A-80D0-42A9-B7F8-CF00FBB270AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F20D494A-80D0-42A9-B7F8-CF00FBB270AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F20D494A-80D0-42A9-B7F8-CF00FBB270AD}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F20D494A-80D0-42A9-B7F8-CF00FBB270AD}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F20D494A-80D0-42A9-B7F8-CF00FBB270AD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F20D494A-80D0-42A9-B7F8-CF00FBB270AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F20D494A-80D0-42A9-B7F8-CF00FBB270AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F20D494A-80D0-42A9-B7F8-CF00FBB270AD}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F20D494A-80D0-42A9-B7F8-CF00FBB270AD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F20D494A-80D0-42A9-B7F8-CF00FBB270AD}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

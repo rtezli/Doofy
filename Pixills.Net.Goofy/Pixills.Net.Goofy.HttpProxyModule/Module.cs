@@ -1,10 +1,10 @@
-﻿using System.Threading.Tasks;
-using Pixills.Net.Goofy.Modules;
+﻿using Pixills.Net.Goofy.Modules;
 using Pixills.Net.Http;
+using Pixills.Tools.Log;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using Pixills.Tools.Log;
+using System.Threading.Tasks;
 
 namespace Pixills.Net.Goofy.HttpProxyModule
 {

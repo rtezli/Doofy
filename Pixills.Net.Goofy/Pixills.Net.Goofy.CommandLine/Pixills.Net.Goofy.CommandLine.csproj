@@ -37,14 +37,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Pixills.Net.Goofy, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Libraries\Pixills.Net.Goofy.dll</HintPath>
-    </Reference>
-    <Reference Include="Pixills.Tools.Log, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Libraries\Pixills.Tools.Log.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -59,6 +51,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Pixills.Net.Tools\Pixills.Net.Tools.csproj">
+      <Project>{f20d494a-80d0-42a9-b7f8-cf00fbb270ad}</Project>
+      <Name>Pixills.Net.Tools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pixills.Net.Goofy.Modules\Pixills.Net.Goofy.Modules.csproj">
+      <Project>{55e63d09-ebe8-49b6-a13f-2c6274c49f47}</Project>
+      <Name>Pixills.Net.Goofy.Modules</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pixills.Net.Goofy\Pixills.Net.Goofy.csproj">
+      <Project>{7c42aeab-bb49-4d99-b7b9-5be8a1a7387c}</Project>
+      <Name>Pixills.Net.Goofy</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

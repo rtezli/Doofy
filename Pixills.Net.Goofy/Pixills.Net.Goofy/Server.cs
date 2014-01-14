@@ -55,7 +55,6 @@ namespace Pixills.Net.Goofy
                 Log(LogLevel.Info, "Start handling client " + s.RemoteEndPoint);
             try
             {
-
                 var inBuffer = new byte[1024];
                 _connections.Add(s);
                 while (_isListening && connectionIsAlive)
