@@ -5,7 +5,11 @@ using System.Text;
 
 namespace Pixills.Net.Goofy.HttpProxyModule.Filters
 {
-    public class ContentInjectionFilter : IFilter
+    public class ContentInjectionFilter : IFilter, IResponseFilter
     {
+        public byte[] Apply(byte[] b)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

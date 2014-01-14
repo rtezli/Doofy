@@ -24,7 +24,7 @@ namespace Pixills.Net.Goofy.CommandLine
             httpProxy.LogEvent += LogToConsole;
             try
             {
-                httpProxy.Start(8080, 200);
+                httpProxy.Start(8080, 200).Start();
             }
             catch (Exception e)
             {

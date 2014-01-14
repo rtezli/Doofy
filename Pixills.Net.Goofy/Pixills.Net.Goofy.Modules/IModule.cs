@@ -11,6 +11,6 @@ namespace Pixills.Net.Goofy.Modules
 
         string ModuleName { get; }
 
-        Task<byte[]> ProcessRequest(MemoryStream buffer);
+        Task<byte[]> GetResponse(MemoryStream buffer);
     }
 }

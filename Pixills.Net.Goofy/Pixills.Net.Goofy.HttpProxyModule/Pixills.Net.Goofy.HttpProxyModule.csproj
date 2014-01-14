@@ -45,6 +45,10 @@
   <ItemGroup>
     <Compile Include="Filters\ContentInjectionFilter.cs" />
     <Compile Include="Filters\IFilter.cs" />
+    <Compile Include="Filters\IRequestFilter.cs" />
+    <Compile Include="Filters\IResponseFilter.cs" />
+    <Compile Include="Filters\JavaScriptFilter.cs" />
+    <Compile Include="Filters\PrivacyEnforcementFilter.cs" />
     <Compile Include="Module.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -61,9 +65,6 @@
       <Project>{55e63d09-ebe8-49b6-a13f-2c6274c49f47}</Project>
       <Name>Pixills.Net.Goofy.Modules</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Certificate.crt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

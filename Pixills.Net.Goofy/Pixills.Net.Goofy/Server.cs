@@ -41,10 +41,13 @@ namespace Pixills.Net.Goofy
             }
         }
 
-        public void Stop()
+        public Task Stop()
         {
-            _isListening = false;
-            _listener.Stop();
+            return new Task(() =>
+            {
+                _isListening = false;
+                _listener.Stop();
+            });
         }
 
         async Task HandleConnection(object o)
@@ -75,7 +78,7 @@ namespace Pixills.Net.Goofy
 
                         if (ms.Length > 0)
                         {
-                            var result = await _module.ProcessRequest(ms);
+                            var result = await _module.GetResponse(ms);
                             if (!SendingResponseSuccees(s, result))
                             {
                                 Log(LogLevel.Error, "Could not send response to client. Closing Connection");

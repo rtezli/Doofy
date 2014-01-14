@@ -10,8 +10,9 @@ namespace Pixills.Net.Goofy.HttpProxyModule
 {
     public class Module : IModule
     {
-        public List<Action> RequestFilterActions;
-        public List<Action> ResponseFilterActions;
+        public List<Func<HttpRequest, HttpRequest>> RequestFilters;
+        public List<Func<HttpResponse, HttpResponse>> ResponseFilters;
+
         public event Action<LogEventArgs> LogEvent;
 
         private readonly string _moduleName;
@@ -26,7 +27,7 @@ namespace Pixills.Net.Goofy.HttpProxyModule
             _moduleName = "HttpProxy";
         }
 
-        public Task<byte[]> ProcessRequest(MemoryStream ms)
+        public Task<byte[]> GetResponse(MemoryStream ms)
         {
             var responseData = new byte[0];
 
@@ -36,11 +37,15 @@ namespace Pixills.Net.Goofy.HttpProxyModule
             if (!request.TryParseProxyRequest(ms))
                 return new Task<byte[]>(() => responseData);
 
-            RequestFilterActions.ForEach(f => f.Invoke());
-
+            foreach (var function in RequestFilters)
+            {
+                request = function.Invoke(request);
+            }
             var response = request.GetResponse();
-
-            RequestFilterActions.ForEach(f => f.Invoke());
+            foreach (var function in ResponseFilters)
+            {
+                response = function.Invoke(response);
+            }
 
             return new Task<byte[]>(() => response.ResponseStream.GetBuffer());
         }

@@ -6,7 +6,7 @@
         {
             var fileNameAndPath = path + "/" + name + ".dll";
             var assembly = System.Reflection.Assembly.LoadFile(name);
-            return (IModule)assembly.CreateInstance("Pixills.Net.Goofy.Modules.Module");
+            return assembly.CreateInstance("Pixills.Net.Goofy.Modules.Module") as IModule;
         }
     }
 }

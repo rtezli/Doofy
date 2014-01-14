@@ -7,6 +7,6 @@ namespace Pixills.Net.Goofy.HttpProxyModule.Filters
 {
     public interface IFilter
     {
-
+        byte[] Apply(byte[] b);
     }
 }
